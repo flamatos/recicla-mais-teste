@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recicla Mais Recompensas - Teste</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container">
+        <!-- Tela de Login (Inicial) -->
+        <div id="login-screen" class="screen active">
+            <div class="header">
+                 <img src="logo.png" alt="Logo Recicla Mais" class="logo">
+                 <h1>Recicla Mais Recompensas</h1>
+            </div>
+            <p>Simulação de Login</p>
+            <input type="email" id="email" placeholder="Email (simulado)" value="teste@reciclamais.com">
+            <input type="password" id="password" placeholder="Senha (simulada)" value="senha123">
+            <button onclick="login()">Entrar</button>
+            <p class="error-message" id="login-error"></p>
+        </div>
+
+        <!-- Tela Principal (Dashboard) -->
+        <div id="dashboard-screen" class="screen">
+            <header>
+                <h2>Dashboard</h2>
+                <button class="logout-button" onclick="logout()">Sair</button>
+            </header>
+            <div class="content">
+                <p>Bem-vindo, <strong>Usuário Teste</strong>!</p>
+                <div class="points-card">
+                    <p>Seu saldo:</p>
+                    <p class="points-balance"><span id="points-balance">1500</span> pontos</p>
+                </div>
+                <p class="info-text">Navegue pelas ofertas e cupons usando o menu abaixo.</p>
+            </div>
+            <footer>
+                <button class="nav-button active" onclick="showScreen('dashboard-screen')">Dashboard</button>
+                <button class="nav-button" onclick="showScreen('offers-screen')">Ofertas</button>
+                <button class="nav-button" onclick="showScreen('coupons-screen')">Cupons</button>
+            </footer>
+        </div>
+
+        <!-- Tela de Ofertas -->
+        <div id="offers-screen" class="screen">
+            <header>
+                <h2>Ofertas Disponíveis</h2>
+                <button class="logout-button" onclick="logout()">Sair</button>
+            </header>
+            <div class="content" id="offers-list">
+                <!-- Ofertas simuladas serão carregadas aqui -->
+                <p>Carregando ofertas...</p>
+            </div>
+            <footer>
+                 <button class="nav-button" onclick="showScreen('dashboard-screen')">Dashboard</button>
+                <button class="nav-button active" onclick="showScreen('offers-screen')">Ofertas</button>
+                <button class="nav-button" onclick="showScreen('coupons-screen')">Cupons</button>
+            </footer>
+        </div>
+
+        <!-- Tela de Cupons -->
+        <div id="coupons-screen" class="screen">
+            <header>
+                <h2>Meus Cupons</h2>
+                <button class="logout-button" onclick="logout()">Sair</button>
+            </header>
+            <div class="content" id="coupons-list">
+                <!-- Cupons simulados serão carregados aqui -->
+                 <p>Carregando cupons...</p>
+            </div>
+            <footer>
+                 <button class="nav-button" onclick="showScreen('dashboard-screen')">Dashboard</button>
+                <button class="nav-button" onclick="showScreen('offers-screen')">Ofertas</button>
+                <button class="nav-button active" onclick="showScreen('coupons-screen')">Cupons</button>
+            </footer>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
